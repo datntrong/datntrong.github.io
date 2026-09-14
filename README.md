@@ -11,7 +11,7 @@ index.html            the whole page (all content lives here)
 404.html              not-found page
 assets/css/style.css  design tokens, light + dark themes, layout
 assets/js/main.js     language switch, theme switch, active-nav highlight
-assets/img/           avatar.jpg, favicon.svg
+assets/img/           avatar.jpg (480px on purpose — see below), favicon.svg
 files/                downloadables — put cv.pdf here
 .nojekyll             serve files as-is, skip Jekyll
 robots.txt, sitemap.xml
@@ -41,20 +41,29 @@ Crossref/OpenAlex is already in place. Search the HTML for `TODO` — each one m
 supply:
 
 - [ ] Contact email — currently the placeholder `your.address@vnu.edu.vn`
-- [ ] `files/cv.pdf` — add the PDF, or delete the CV button in the hero
-- [ ] Field of study in the two education entries (LinkedIn hid the programme names, so
-      they currently read just "Master's degree" / "Bachelor's degree")
+- [ ] `files/cv.pdf` — add the PDF, or delete the CV pill in the hero
+- [ ] Master's programme name (LinkedIn hid it, so the entry reads just "Master's degree").
+      The Bachelor's is filled in — Computer Science, honours programme — read off the
+      diploma in the hero photo
 - [ ] Exact title before the lab name in the hero, if you want one
       ("MSc student," / "Research assistant,")
 - [ ] Publication venue for UnitTestLM — tagged `Preprint`; add paper/arXiv/BibTeX links
       under `.pub-links`
 - [ ] The two `2026` news items need real dates (`Jul 2026`)
-- [ ] Google Scholar link — commented-out template is in the hero `.actions`
+- [ ] Google Scholar link — commented-out template is in the hero `.pills`
 - [ ] Optional: a real two-line summary for the ConAgent entry (neither Crossref nor SSRN
       publishes its abstract, so the current one just restates the title)
 - [ ] Check the CIA-AUT project description matches what the repo actually does
-- [ ] `assets/img/avatar.jpg` is your current GitHub avatar (the dog) — swap in a portrait
-      if you want one
+- [ ] Optional: confirm the Bachelor's grade. The diploma in the photo reads
+      "Hạng: Xuất sắc", but it is not on the page — add it to the education entry if you
+      want it shown
+
+## Why the avatar is 480px
+
+The hero photo is a graduation shot, and the diploma in it carries a date of birth and
+place of birth. At 480px those lines are unreadable; served at the original 800px they
+can be zoomed and read. The card renders it at ~220px, so 480px still looks sharp on a
+retina screen. If you replace the image, keep it around that size.
 
 ## Preview locally
 
