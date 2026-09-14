@@ -36,19 +36,23 @@ code identifiers stay untranslated — only wrap the prose.
 
 ## Still to fill in
 
-Search the HTML for `TODO` — each one marks something only you can supply:
+Content pulled from your GitHub repos, your public LinkedIn profile and Crossref is
+already in place. Search the HTML for `TODO` — each one marks something only you can
+supply:
 
-- [ ] Hero role — `[Student / Research assistant]` → your actual title
-- [ ] `files/cv.pdf` — add the PDF, or delete the CV button in the hero
 - [ ] Contact email — currently the placeholder `your.address@vnu.edu.vn`
-- [ ] Education entry — degree and years (`[20XX – 20XX]`, `[Degree]`)
-- [ ] Publication venue — the UnitTestLM entry is tagged `Preprint`; update it, and add
-      paper/arXiv/BibTeX links under `.pub-links`
-- [ ] News dates — currently just `2026`; use real dates (`Jul 2026`)
-- [ ] Optional profile links (Google Scholar, LinkedIn, ORCID) — commented-out templates
-      are in the hero `.actions` block
+- [ ] `files/cv.pdf` — add the PDF, or delete the CV button in the hero
+- [ ] Field of study in the two education entries (LinkedIn hid the programme names, so
+      they currently read just "Master's degree" / "Bachelor's degree")
+- [ ] Exact title before the lab name in the hero, if you want one
+      ("MSc student," / "Research assistant,")
+- [ ] Publication venue for UnitTestLM — tagged `Preprint`; add paper/arXiv/BibTeX links
+      under `.pub-links`
+- [ ] The two `2026` news items need real dates (`Jul 2026`)
+- [ ] Google Scholar / ORCID links — commented-out templates are in the hero `.actions`
 - [ ] Check the CIA-AUT project description matches what the repo actually does
-- [ ] `assets/img/avatar.jpg` is your current GitHub avatar (the dog) — swap in a portrait if you want one
+- [ ] `assets/img/avatar.jpg` is your current GitHub avatar (the dog) — swap in a portrait
+      if you want one
 
 ## Preview locally
 

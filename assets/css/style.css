@@ -154,9 +154,9 @@ sup { font-size: .7em; }
 
 /* News */
 .news { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
-.news li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; align-items: baseline; }
+.news li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: baseline; }
 .news time {
-  font: 600 .78rem/1.5 var(--mono); color: var(--accent);
+  font: 600 .78rem/1.5 var(--mono); color: var(--accent); white-space: nowrap;
   background: var(--accent-dim); border-radius: 5px; padding: .1rem .4rem; text-align: center;
 }
 
@@ -226,3 +226,9 @@ sup { font-size: .7em; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .card, .pub { box-shadow: none; break-inside: avoid; }
 }
+
+/* Awards reuse the timeline grid, with tighter rows. */
+.awards { gap: .9rem; }
+.awards li { grid-template-columns: 9rem 1fr; }
+.awards .what h3 { font-size: 1rem; }
+.awards .what p { margin-top: .1rem; font-size: .88rem; }
