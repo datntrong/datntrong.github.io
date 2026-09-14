@@ -36,8 +36,8 @@ code identifiers stay untranslated — only wrap the prose.
 
 ## Still to fill in
 
-Content pulled from your GitHub repos, your public LinkedIn profile and Crossref is
-already in place. Search the HTML for `TODO` — each one marks something only you can
+Content pulled from your GitHub repos, your public LinkedIn profile, ORCID and
+Crossref/OpenAlex is already in place. Search the HTML for `TODO` — each one marks something only you can
 supply:
 
 - [ ] Contact email — currently the placeholder `your.address@vnu.edu.vn`
@@ -49,7 +49,9 @@ supply:
 - [ ] Publication venue for UnitTestLM — tagged `Preprint`; add paper/arXiv/BibTeX links
       under `.pub-links`
 - [ ] The two `2026` news items need real dates (`Jul 2026`)
-- [ ] Google Scholar / ORCID links — commented-out templates are in the hero `.actions`
+- [ ] Google Scholar link — commented-out template is in the hero `.actions`
+- [ ] Optional: a real two-line summary for the ConAgent entry (neither Crossref nor SSRN
+      publishes its abstract, so the current one just restates the title)
 - [ ] Check the CIA-AUT project description matches what the repo actually does
 - [ ] `assets/img/avatar.jpg` is your current GitHub avatar (the dog) — swap in a portrait
       if you want one

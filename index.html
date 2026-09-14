@@ -54,7 +54,16 @@
     "name": "Software Quality Assurance Laboratory (RD320), VNU University of Engineering and Technology"
   },
   "knowsAbout": ["Automated software testing", "Unit test generation", "Large language models", "Multi-agent systems", "Speech processing"],
-  "sameAs": ["https://github.com/datntrong", "https://www.linkedin.com/in/datntrong/"]
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "https://orcid.org/0009-0002-4941-7635"
+  },
+  "sameAs": [
+    "https://github.com/datntrong",
+    "https://www.linkedin.com/in/datntrong/",
+    "https://orcid.org/0009-0002-4941-7635"
+  ]
 }
 </script>
 </head>
@@ -106,8 +115,8 @@
       </p>
 
       <p class="lede">
-        <span data-l="en">I work on <strong>automated software testing</strong> and on making large language models useful for it in practice: generating unit tests that actually compile, run and cover the code under test; analysing the impact of code changes; and building multi-agent systems for software engineering tasks. Earlier I worked on speech processing and medical image analysis.</span>
-        <span data-l="vi">Tôi nghiên cứu về <strong>kiểm thử phần mềm tự động</strong> và cách dùng các mô hình ngôn ngữ lớn cho việc đó một cách thực dụng: sinh unit test biên dịch được, chạy được và phủ được mã nguồn; phân tích ảnh hưởng của thay đổi mã; và xây dựng hệ đa tác tử cho các bài toán công nghệ phần mềm. Trước đó tôi làm về xử lý tiếng nói và phân tích ảnh y tế.</span>
+        <span data-l="en">I work on <strong>automated software testing</strong> and on making large language models useful for it in practice: generating unit tests that actually compile, run and cover the code under test; concolic test-data generation; analysing the impact of code changes; and building multi-agent systems for software engineering tasks. Earlier I worked on speech processing and medical image analysis.</span>
+        <span data-l="vi">Tôi nghiên cứu về <strong>kiểm thử phần mềm tự động</strong> và cách dùng các mô hình ngôn ngữ lớn cho việc đó một cách thực dụng: sinh unit test biên dịch được, chạy được và phủ được mã nguồn; sinh dữ liệu kiểm thử bằng concolic testing; phân tích ảnh hưởng của thay đổi mã; và xây dựng hệ đa tác tử cho các bài toán công nghệ phần mềm. Trước đó tôi làm về xử lý tiếng nói và phân tích ảnh y tế.</span>
       </p>
 
       <p class="actions">
@@ -117,9 +126,9 @@
         </a>
         <a class="btn" href="https://github.com/datntrong" rel="me noopener">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/datntrong/" rel="me noopener">LinkedIn</a>
-        <!-- TODO: add these once you have them.
+        <a class="btn" href="https://orcid.org/0009-0002-4941-7635" rel="me noopener">ORCID</a>
+        <!-- TODO: add this once you have it.
         <a class="btn" href="https://scholar.google.com/citations?user=XXXX" rel="noopener">Google Scholar</a>
-        <a class="btn" href="https://orcid.org/0000-0000-0000-0000" rel="me noopener">ORCID</a>
         -->
       </p>
     </div>
@@ -130,6 +139,11 @@
   <section id="news" class="wrap section">
     <h2><span data-l="en">News</span><span data-l="vi">Tin mới</span></h2>
     <ul class="news">
+      <li>
+        <time>2026</time>
+        <span data-l="en"><strong>ConAgent</strong> — agent-based concolic testing for Qt projects — appears in <em>Information and Software Technology</em> (vol. 200). <a href="https://doi.org/10.1016/j.infsof.2026.108301" rel="noopener">DOI</a>.</span>
+        <span data-l="vi"><strong>ConAgent</strong> — concolic testing dựa trên tác tử cho các dự án Qt — được công bố trên <em>Information and Software Technology</em> (tập 200). <a href="https://doi.org/10.1016/j.infsof.2026.108301" rel="noopener">DOI</a>.</span>
+      </li>
       <li>
         <time><span data-l="en">Dec 2025</span><span data-l="vi">12/2025</span></time>
         <span data-l="en"><strong>First Prize</strong> at the Viettel AI Race (Viettel Group).</span>
@@ -155,8 +169,8 @@
       <article class="card">
         <h3><span data-l="en">Automated unit test generation</span><span data-l="vi">Sinh unit test tự động</span></h3>
         <p>
-          <span data-l="en">Tests are only worth anything if they build, run and exercise the target. I work on pipelines that validate every candidate test end-to-end — <code>pytest</code> for Python, compile-link-execute with gcov/lcov for C++ — and use that signal to train compact models instead of paying for a frontier model per method.</span>
-          <span data-l="vi">Một test chỉ có giá trị khi nó biên dịch được, chạy được và thực sự gọi tới hàm đích. Tôi xây các pipeline kiểm chứng từng test sinh ra một cách đầu-cuối — <code>pytest</code> cho Python, compile-link-execute kèm gcov/lcov cho C++ — rồi dùng tín hiệu đó để huấn luyện mô hình nhỏ, thay vì gọi mô hình lớn cho từng hàm.</span>
+          <span data-l="en">Tests are only worth anything if they build, run and exercise the target. I work on pipelines that validate every candidate test end-to-end — <code>pytest</code> for Python, compile-link-execute with gcov/lcov for C++ — and use that signal to train compact models instead of paying for a frontier model per method. Related: concolic test-data generation for C++ projects that use framework classes, where a solver alone cannot build the objects a driver needs.</span>
+          <span data-l="vi">Một test chỉ có giá trị khi nó biên dịch được, chạy được và thực sự gọi tới hàm đích. Tôi xây các pipeline kiểm chứng từng test sinh ra một cách đầu-cuối — <code>pytest</code> cho Python, compile-link-execute kèm gcov/lcov cho C++ — rồi dùng tín hiệu đó để huấn luyện mô hình nhỏ, thay vì gọi mô hình lớn cho từng hàm. Liên quan: sinh dữ liệu kiểm thử bằng concolic testing cho dự án C++ dùng lớp của framework, nơi bộ giải ràng buộc một mình không tạo được các đối tượng mà test driver cần.</span>
         </p>
       </article>
       <article class="card">
@@ -192,6 +206,25 @@
     </p>
 
     <ol class="pubs">
+      <!-- TODO (optional): Crossref/SSRN carry no abstract for this one, so the summary
+           below only restates the title — paste a real two-line summary if you want. -->
+      <li class="pub">
+        <div class="pub-tag">IST 2026</div>
+        <div class="pub-body">
+          <h3>ConAgent: Agent-based concolic testing to generate test data for Qt projects</h3>
+          <p class="pub-authors"><strong>Dat Nguyen Trong</strong>, Duc Nguyen Huu, Linh Ngoc Truc Tran, Duc-Anh Nguyen, Pham Ngoc Hung</p>
+          <p class="pub-venue">Information and Software Technology, vol. 200, art. 108301, 2026</p>
+          <p class="pub-abs">
+            <span data-l="en">An agent-based approach to concolic testing that generates test data for C++ projects built on the Qt framework — code that classic concolic tools struggle with, because they cannot instantiate framework classes in a test driver.</span>
+            <span data-l="vi">Một hướng tiếp cận dựa trên tác tử cho concolic testing, sinh dữ liệu kiểm thử cho các dự án C++ dùng framework Qt — loại mã mà các công cụ concolic truyền thống gặp khó, vì chúng không khởi tạo được đối tượng của lớp framework trong test driver.</span>
+          </p>
+          <p class="pub-links">
+            <a href="https://doi.org/10.1016/j.infsof.2026.108301" rel="noopener">DOI</a>
+            <a href="https://doi.org/10.2139/ssrn.5369273" rel="noopener"><span data-l="en">Accepted version (open access)</span><span data-l="vi">Bản chấp nhận (truy cập mở)</span></a>
+          </p>
+        </div>
+      </li>
+
       <!-- TODO: update the venue/year tag below once the paper has one. -->
       <li class="pub">
         <div class="pub-tag">
@@ -380,6 +413,7 @@
       <li><span class="k">Email</span><span class="v"><a href="mailto:your.address@vnu.edu.vn">your.address@vnu.edu.vn</a></span></li>
       <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/datntrong" rel="me noopener">github.com/datntrong</a></span></li>
       <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/datntrong/" rel="me noopener">linkedin.com/in/datntrong</a></span></li>
+      <li><span class="k">ORCID</span><span class="v"><a href="https://orcid.org/0009-0002-4941-7635" rel="me noopener">0009-0002-4941-7635</a></span></li>
       <li><span class="k" data-l="en">Location</span><span class="k" data-l="vi">Địa chỉ</span><span class="v"><span data-l="en">Hanoi, Vietnam</span><span data-l="vi">Hà Nội, Việt Nam</span></span></li>
     </ul>
   </section>
