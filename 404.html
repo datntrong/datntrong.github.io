@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Dat Nguyen Trong</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script>
+  (function () {
+    var root = document.documentElement;
+    var lang = localStorage.getItem('lang');
+    if (lang !== 'vi' && lang !== 'en') {
+      lang = (navigator.language || 'en').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+    }
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang);
+    var theme = localStorage.getItem('theme');
+    if (theme === 'dark' || theme === 'light') root.setAttribute('data-theme', theme);
+  })();
+</script>
+<style>
+  .oops { min-height: 70vh; display: grid; place-content: center; text-align: center; gap: 1rem; }
+  .oops .code { font: 600 clamp(3rem, 12vw, 6rem)/1 var(--serif); color: var(--accent); }
+</style>
+</head>
+<body>
+<main class="wrap oops">
+  <p class="code">404</p>
+  <h1>
+    <span data-l="en">Page not found</span>
+    <span data-l="vi">Không tìm thấy trang</span>
+  </h1>
+  <p class="lede" style="margin-inline:auto">
+    <span data-l="en">That address does not exist on this site.</span>
+    <span data-l="vi">Địa chỉ này không tồn tại trên trang.</span>
+  </p>
+  <p><a class="btn" href="/"><span data-l="en">Back to the homepage</span><span data-l="vi">Về trang chủ</span></a></p>
+</main>
+</body>
+</html>

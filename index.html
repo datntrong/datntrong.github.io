@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dat Nguyen Trong</title>
+<meta name="author" content="Dat Nguyen Trong">
+<meta name="description" content="Dat Nguyen Trong — research on automated software testing and LLM-based agents at the Faculty of Information Technology, VNU University of Engineering and Technology, Hanoi.">
+<meta name="keywords" content="Dat Nguyen Trong, Nguyen Trong Dat, automated software testing, unit test generation, large language models, LLM agents, VNU-UET, Hanoi">
+<link rel="canonical" href="https://datntrong.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Dat Nguyen Trong">
+<meta property="og:description" content="Automated software testing and LLM-based agents — VNU University of Engineering and Technology, Hanoi.">
+<meta property="og:url" content="https://datntrong.github.io/">
+<meta property="og:image" content="https://datntrong.github.io/assets/img/avatar.jpg">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/avatar.jpg">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script>
+  // Applied before first paint so the page never flashes the wrong theme/language.
+  (function () {
+    var root = document.documentElement;
+    var q = new URLSearchParams(location.search).get('lang');
+    var lang = q || localStorage.getItem('lang');
+    if (lang !== 'vi' && lang !== 'en') {
+      lang = (navigator.language || 'en').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+    }
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang);
+    var theme = localStorage.getItem('theme');
+    if (theme === 'dark' || theme === 'light') root.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dat Nguyen Trong",
+  "alternateName": "Nguyễn Trọng Đạt",
+  "url": "https://datntrong.github.io/",
+  "image": "https://datntrong.github.io/assets/img/avatar.jpg",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "VNU University of Engineering and Technology",
+    "address": "Hanoi, Vietnam"
+  },
+  "knowsAbout": ["Automated software testing", "Unit test generation", "Large language models", "Multi-agent systems", "Speech processing"],
+  "sameAs": ["https://github.com/datntrong"]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip-link" href="#main"><span data-l="en">Skip to content</span><span data-l="vi">Tới nội dung</span></a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top"><span data-l="en">Dat Nguyen Trong</span><span data-l="vi">Nguyễn Trọng Đạt</span></a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#about"><span data-l="en">About</span><span data-l="vi">Giới thiệu</span></a>
+      <a href="#research"><span data-l="en">Research</span><span data-l="vi">Nghiên cứu</span></a>
+      <a href="#publications"><span data-l="en">Publications</span><span data-l="vi">Công bố</span></a>
+      <a href="#projects"><span data-l="en">Projects</span><span data-l="vi">Dự án</span></a>
+      <a href="#contact"><span data-l="en">Contact</span><span data-l="vi">Liên hệ</span></a>
+    </nav>
+    <div class="controls">
+      <button id="lang-toggle" type="button" class="icon-btn" aria-label="Switch language">
+        <span data-l="en">VI</span><span data-l="vi">EN</span>
+      </button>
+      <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g stroke-linecap="round"><path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7"/></g></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- TODO: assets/img/avatar.jpg is your current GitHub avatar — swap in a portrait if you prefer. -->
+  <!-- ─── About / hero ─────────────────────────────────────────────── -->
+  <section id="about" class="wrap hero">
+    <img class="avatar" src="assets/img/avatar.jpg" width="200" height="200" alt="Dat Nguyen Trong" fetchpriority="high">
+    <div class="hero-text">
+      <h1>
+        <span data-l="en">Dat Nguyen Trong</span>
+        <span data-l="vi">Nguyễn Trọng Đạt</span>
+      </h1>
+      <!-- TODO: replace the bracketed role with your exact title (e.g. "MSc student", "Research assistant"). -->
+      <p class="role">
+        <span data-l="en">[Student / Research assistant], Faculty of Information Technology</span>
+        <span data-l="vi">[Sinh viên / Trợ lý nghiên cứu], Khoa Công nghệ Thông tin</span>
+      </p>
+      <p class="affil">
+        <span data-l="en">VNU University of Engineering and Technology · Hanoi, Vietnam</span>
+        <span data-l="vi">Trường Đại học Công nghệ, ĐHQG Hà Nội · Hà Nội, Việt Nam</span>
+      </p>
+
+      <p class="lede">
+        <span data-l="en">I work on <strong>automated software testing</strong> and on making large language models useful for it in practice: generating unit tests that actually compile, run and cover the code under test; analysing the impact of code changes; and building multi-agent systems for software engineering tasks. Earlier I worked on speech processing and medical image analysis.</span>
+        <span data-l="vi">Tôi nghiên cứu về <strong>kiểm thử phần mềm tự động</strong> và cách dùng các mô hình ngôn ngữ lớn cho việc đó một cách thực dụng: sinh unit test biên dịch được, chạy được và phủ được mã nguồn; phân tích ảnh hưởng của thay đổi mã; và xây dựng hệ đa tác tử cho các bài toán công nghệ phần mềm. Trước đó tôi làm về xử lý tiếng nói và phân tích ảnh y tế.</span>
+      </p>
+
+      <p class="actions">
+        <!-- TODO: put your CV at files/cv.pdf, or delete this button. -->
+        <a class="btn primary" href="files/cv.pdf">
+          <span data-l="en">Curriculum vitae</span><span data-l="vi">Sơ yếu lý lịch</span>
+        </a>
+        <a class="btn" href="https://github.com/datntrong" rel="me noopener">GitHub</a>
+        <!-- TODO: add your own links when you have them, then delete this comment.
+        <a class="btn" href="https://scholar.google.com/citations?user=XXXX" rel="noopener">Google Scholar</a>
+        <a class="btn" href="https://www.linkedin.com/in/XXXX" rel="me noopener">LinkedIn</a>
+        <a class="btn" href="https://orcid.org/0000-0000-0000-0000" rel="me noopener">ORCID</a>
+        -->
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── News ─────────────────────────────────────────────────────── -->
+  <!-- TODO: replace the years below with real dates (e.g. "Jul 2026") as things happen. -->
+  <section id="news" class="wrap section">
+    <h2><span data-l="en">News</span><span data-l="vi">Tin mới</span></h2>
+    <ul class="news">
+      <li>
+        <time>2026</time>
+        <span data-l="en"><strong>UnitTestLM</strong> is public — a distillation + GRPO pipeline that gets a small model to 84% statement coverage on Python and 73% on C++, while running faster than its 8×H200 teacher. <a href="https://github.com/datntrong/UnitTestLM" rel="noopener">Code</a>.</span>
+        <span data-l="vi"><strong>UnitTestLM</strong> đã công khai — pipeline distillation + GRPO giúp một mô hình nhỏ đạt 84% statement coverage với Python và 73% với C++, mà vẫn chạy nhanh hơn mô hình teacher 8×H200. <a href="https://github.com/datntrong/UnitTestLM" rel="noopener">Mã nguồn</a>.</span>
+      </li>
+      <li>
+        <time>2026</time>
+        <span data-l="en"><strong>MeetBridge AI</strong> — a fully on-device Vietnamese ⇄ English real-time meeting translator (0.6–0.73 s end-to-end latency, no audio leaves the machine). <a href="https://github.com/datntrong/VAIC" rel="noopener">Code</a>.</span>
+        <span data-l="vi"><strong>MeetBridge AI</strong> — phiên dịch họp Việt ⇄ Anh thời gian thực chạy 100% trên máy (độ trễ 0,6–0,73 s, âm thanh không rời khỏi máy). <a href="https://github.com/datntrong/VAIC" rel="noopener">Mã nguồn</a>.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ─── Research ─────────────────────────────────────────────────── -->
+  <section id="research" class="section wrap">
+    <h2><span data-l="en">Research interests</span><span data-l="vi">Hướng nghiên cứu</span></h2>
+    <div class="cards">
+      <article class="card">
+        <h3><span data-l="en">Automated unit test generation</span><span data-l="vi">Sinh unit test tự động</span></h3>
+        <p>
+          <span data-l="en">Tests are only worth anything if they build, run and exercise the target. I work on pipelines that validate every candidate test end-to-end — <code>pytest</code> for Python, compile-link-execute with gcov/lcov for C++ — and use that signal to train compact models instead of paying for a frontier model per method.</span>
+          <span data-l="vi">Một test chỉ có giá trị khi nó biên dịch được, chạy được và thực sự gọi tới hàm đích. Tôi xây các pipeline kiểm chứng từng test sinh ra một cách đầu-cuối — <code>pytest</code> cho Python, compile-link-execute kèm gcov/lcov cho C++ — rồi dùng tín hiệu đó để huấn luyện mô hình nhỏ, thay vì gọi mô hình lớn cho từng hàm.</span>
+        </p>
+      </article>
+      <article class="card">
+        <h3><span data-l="en">LLM agents for software engineering</span><span data-l="vi">Tác tử LLM cho công nghệ phần mềm</span></h3>
+        <p>
+          <span data-l="en">Multi-agent workflows for repository-scale tasks: change impact analysis, test repair, mutation testing and regression selection — with execution feedback in the loop rather than one-shot prompting.</span>
+          <span data-l="vi">Quy trình đa tác tử cho các bài toán ở quy mô repository: phân tích ảnh hưởng thay đổi, sửa test, mutation testing và chọn lọc kiểm thử hồi quy — có phản hồi từ thực thi trong vòng lặp, không chỉ prompt một lượt.</span>
+        </p>
+      </article>
+      <article class="card">
+        <h3><span data-l="en">Efficient model adaptation</span><span data-l="vi">Tinh chỉnh mô hình hiệu quả</span></h3>
+        <p>
+          <span data-l="en">Knowledge distillation and reinforcement learning with rule-based, verifiable rewards (GRPO), so a model that fits on one GPU keeps most of a much larger teacher's capability at a fraction of the inference cost.</span>
+          <span data-l="vi">Knowledge distillation và học tăng cường với phần thưởng kiểm chứng được theo luật (GRPO), để một mô hình chạy vừa một GPU giữ được phần lớn năng lực của teacher lớn hơn nhiều, với chi phí suy luận nhỏ hơn hẳn.</span>
+        </p>
+      </article>
+      <article class="card">
+        <h3><span data-l="en">Speech &amp; multimodal systems</span><span data-l="vi">Tiếng nói &amp; hệ đa phương thức</span></h3>
+        <p>
+          <span data-l="en">On-device speech pipelines for Vietnamese — VAD, ASR, translation, TTS and speaker separation — with latency and privacy as first-class constraints.</span>
+          <span data-l="vi">Pipeline xử lý tiếng nói tiếng Việt chạy trên thiết bị — VAD, ASR, dịch, TTS và tách giọng — với độ trễ và quyền riêng tư là ràng buộc hàng đầu.</span>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── Publications ─────────────────────────────────────────────── -->
+  <section id="publications" class="section wrap">
+    <h2><span data-l="en">Publications</span><span data-l="vi">Công bố</span></h2>
+    <p class="note">
+      <span data-l="en"><sup>*</sup> equal contribution · <sup>†</sup> corresponding author</span>
+      <span data-l="vi"><sup>*</sup> đóng góp ngang nhau · <sup>†</sup> tác giả liên hệ</span>
+    </p>
+
+    <ol class="pubs">
+      <!-- TODO: update the venue/year tag below once the paper has one. -->
+      <li class="pub">
+        <div class="pub-tag">
+          <span data-l="en">Preprint</span><span data-l="vi">Bản thảo</span>
+        </div>
+        <div class="pub-body">
+          <h3>UnitTestLM for Efficient Unit Test Generation via Distillation and Reinforcement Learning</h3>
+          <p class="pub-authors"><strong>Dat Nguyen Trong</strong><sup>*</sup>, Phuoc Truong Minh<sup>*</sup>, Chau Nguyen To Trinh, Trung Hau Tran, Duc Anh Nguyen<sup>†</sup>, Pham Ngoc Hung</p>
+          <p class="pub-venue">
+            <span data-l="en">Faculty of Information Technology, VNU University of Engineering and Technology</span>
+            <span data-l="vi">Khoa Công nghệ Thông tin, Trường Đại học Công nghệ, ĐHQG Hà Nội</span>
+          </p>
+          <p class="pub-abs">
+            <span data-l="en">A two-stage pipeline — sequence-level distillation on execution-validated targets, then GRPO with rewards for format, build validity, successful execution and focal-method coverage — that lifts a compact student from 36% to 84% statement coverage on Python and from 26% to 73% on C++, at roughly 1/20 of the teacher's inference cost.</span>
+            <span data-l="vi">Pipeline hai giai đoạn — distillation ở mức chuỗi trên các nhãn đã kiểm chứng bằng thực thi, rồi GRPO với phần thưởng cho định dạng, tính biên dịch được, thực thi thành công và độ phủ hàm đích — đưa mô hình student nhỏ từ 36% lên 84% statement coverage với Python và từ 26% lên 73% với C++, với chi phí suy luận khoảng 1/20 so với teacher.</span>
+          </p>
+          <p class="pub-links">
+            <a href="https://github.com/datntrong/UnitTestLM" rel="noopener"><span data-l="en">Code</span><span data-l="vi">Mã nguồn</span></a>
+            <!-- TODO: add paper / arXiv / BibTeX links here when available. -->
+          </p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ─── Projects ─────────────────────────────────────────────────── -->
+  <section id="projects" class="section wrap">
+    <h2><span data-l="en">Selected projects</span><span data-l="vi">Dự án tiêu biểu</span></h2>
+    <div class="cards">
+      <article class="card proj">
+        <h3><a href="https://github.com/datntrong/UnitTestLM" rel="noopener">UnitTestLM</a></h3>
+        <p>
+          <span data-l="en">Compact-model pipeline for Python and C++ unit test generation. Every generated test is validated by execution before it counts.</span>
+          <span data-l="vi">Pipeline mô hình nhỏ để sinh unit test cho Python và C++. Mọi test sinh ra đều phải qua kiểm chứng bằng thực thi.</span>
+        </p>
+        <p class="tags"><span>Python</span><span>PyTorch</span><span>GRPO</span><span>gcov/lcov</span></p>
+      </article>
+
+      <article class="card proj">
+        <h3><a href="https://github.com/datntrong/VAIC" rel="noopener">MeetBridge AI</a></h3>
+        <p>
+          <span data-l="en">Real-time Vietnamese ⇄ English meeting translator running entirely on Apple Silicon: VAD → ASR → translation → TTS → speaker separation, ~7 GB RAM, works offline.</span>
+          <span data-l="vi">Phiên dịch họp Việt ⇄ Anh thời gian thực chạy hoàn toàn trên Apple Silicon: VAD → ASR → dịch → TTS → tách giọng, ~7 GB RAM, chạy được khi offline.</span>
+        </p>
+        <p class="tags"><span>Python</span><span>MLX / Metal</span><span>ONNX</span><span>On-device</span></p>
+      </article>
+
+      <!-- TODO: check this description matches what CIA-AUT actually does. -->
+      <article class="card proj">
+        <h3><a href="https://github.com/datntrong/CIA-AUT" rel="noopener">CIA-AUT</a></h3>
+        <p>
+          <span data-l="en">Change impact analysis for automated unit testing of Java projects — deciding what to re-test after a change instead of re-running everything.</span>
+          <span data-l="vi">Phân tích ảnh hưởng thay đổi cho kiểm thử đơn vị tự động với dự án Java — xác định cần kiểm thử lại phần nào sau mỗi thay đổi, thay vì chạy lại toàn bộ.</span>
+        </p>
+        <p class="tags"><span>Java</span><span>Static analysis</span></p>
+      </article>
+
+      <article class="card proj">
+        <h3><a href="https://github.com/datntrong/ViWhisper" rel="noopener">ViWhisper</a></h3>
+        <p>
+          <span data-l="en">Experiments on Vietnamese speech recognition with Whisper, alongside earlier work on voice activity detection and speech quality assessment.</span>
+          <span data-l="vi">Thử nghiệm nhận dạng tiếng nói tiếng Việt với Whisper, cùng các công việc trước đó về phát hiện tiếng nói và đánh giá chất lượng tiếng nói.</span>
+        </p>
+        <p class="tags"><span>Whisper</span><span>ASR</span><span>Vietnamese</span></p>
+      </article>
+    </div>
+    <p class="more">
+      <a href="https://github.com/datntrong?tab=repositories" rel="noopener">
+        <span data-l="en">All repositories on GitHub →</span><span data-l="vi">Toàn bộ repository trên GitHub →</span>
+      </a>
+    </p>
+  </section>
+
+  <!-- ─── Education ────────────────────────────────────────────────── -->
+  <!-- TODO: fill in degree, years and anything else (internships, teaching, awards). -->
+  <section id="education" class="section wrap">
+    <h2><span data-l="en">Education</span><span data-l="vi">Học vấn</span></h2>
+    <ul class="timeline">
+      <li>
+        <div class="when">[20XX – 20XX]</div>
+        <div class="what">
+          <h3>
+            <span data-l="en">VNU University of Engineering and Technology</span>
+            <span data-l="vi">Trường Đại học Công nghệ, ĐHQG Hà Nội</span>
+          </h3>
+          <p>
+            <span data-l="en">[Degree], Faculty of Information Technology — Hanoi, Vietnam</span>
+            <span data-l="vi">[Bằng cấp], Khoa Công nghệ Thông tin — Hà Nội, Việt Nam</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ─── Contact ──────────────────────────────────────────────────── -->
+  <section id="contact" class="section wrap">
+    <h2><span data-l="en">Contact</span><span data-l="vi">Liên hệ</span></h2>
+    <p class="lede">
+      <span data-l="en">Happy to talk about automated testing, LLM agents, or collaborations. The fastest way to reach me is email.</span>
+      <span data-l="vi">Rất vui được trao đổi về kiểm thử tự động, tác tử LLM hoặc các cơ hội hợp tác. Cách nhanh nhất là gửi email.</span>
+    </p>
+    <!-- TODO: replace with the address you actually want published. -->
+    <ul class="contact">
+      <li><span class="k">Email</span><span class="v"><a href="mailto:your.address@vnu.edu.vn">your.address@vnu.edu.vn</a></span></li>
+      <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/datntrong" rel="me noopener">github.com/datntrong</a></span></li>
+      <li><span class="k" data-l="en">Location</span><span class="k" data-l="vi">Địa chỉ</span><span class="v"><span data-l="en">Hanoi, Vietnam</span><span data-l="vi">Hà Nội, Việt Nam</span></span></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© <span id="year">2026</span> Dat Nguyen Trong</p>
+    <p class="built">
+      <span data-l="en">Static HTML on GitHub Pages · <a href="https://github.com/datntrong/datntrong.github.io" rel="noopener">source</a></span>
+      <span data-l="vi">HTML tĩnh trên GitHub Pages · <a href="https://github.com/datntrong/datntrong.github.io" rel="noopener">mã nguồn</a></span>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
