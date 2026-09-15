@@ -11,7 +11,8 @@ index.html            the whole page (all content lives here)
 404.html              not-found page
 assets/css/style.css  design tokens, light + dark themes, layout
 assets/js/main.js     language switch, theme switch, active-nav highlight
-assets/img/           avatar.jpg (480px on purpose — see below), favicon.svg
+assets/img/           avatar.jpg (480px on purpose — see below),
+                      datntrong.svg + .png — the tab icon, a cartoon drawn from the photo
 assets/fonts/         Lora woff2 subsets, self-hosted (see below)
 files/                downloadables — put cv.pdf here
 .nojekyll             serve files as-is, skip Jekyll
