@@ -38,17 +38,12 @@ code identifiers stay untranslated — only wrap the prose.
 
 ## Still to fill in
 
-Content pulled from your GitHub repos, your public LinkedIn profile, ORCID and
+Content pulled from your GitHub repos, your LinkedIn profile, ORCID and
 Crossref/OpenAlex is already in place. Search the HTML for `TODO` — each one marks something only you can
 supply:
 
 - [ ] Contact email — currently the placeholder `your.address@vnu.edu.vn`
 - [ ] `files/cv.pdf` — add the PDF, or delete the CV pill in the hero
-- [ ] Master's programme name (LinkedIn hid it, so the entry reads just "Master's degree").
-      The Bachelor's is filled in — Computer Science, honours programme — read off the
-      diploma in the hero photo
-- [ ] Exact title before the lab name in the hero, if you want one
-      ("MSc student," / "Research assistant,")
 - [ ] Publication venue for UnitTestLM — tagged `Preprint`; add paper/arXiv/BibTeX links
       under `.pub-links`
 - [ ] The two `2026` news items need real dates (`Jul 2026`)
@@ -56,9 +51,9 @@ supply:
 - [ ] Optional: a real two-line summary for the ConAgent entry (neither Crossref nor SSRN
       publishes its abstract, so the current one just restates the title)
 - [ ] Check the CIA-AUT project description matches what the repo actually does
-- [ ] Optional: confirm the Bachelor's grade. The diploma in the photo reads
-      "Hạng: Xuất sắc", but it is not on the page — add it to the education entry if you
-      want it shown
+- [ ] Your LinkedIn headline still reads "Master student at Vietnam National University,
+      Hanoi" even though the MSc finished in Jun 2026. The site says "Research assistant"
+      instead, matching your experience entry — worth fixing the headline on LinkedIn
 
 ## Fonts
 
