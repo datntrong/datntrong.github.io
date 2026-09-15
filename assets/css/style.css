@@ -1,3 +1,34 @@
+/* ── Lora, self-hosted (SIL Open Font License 1.1) ─────────────────────
+   Headings used to fall back mid-word in Vietnamese: the old stack reached
+   "Iowan Old Style", whose cmap has no ơ ư ớ ờ ở ỡ ợ ứ ừ ử ữ ự, so Chrome
+   swapped fonts for exactly those glyphs. Lora's vietnamese subset covers
+   U+01A0-01B0 and U+1EA0-1EF9, which is the gap.
+   ------------------------------------------------------------------------ */
+@font-face {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/lora-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/lora-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/lora-vietnamese.woff2") format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
 /* ── Tokens ─────────────────────────────────────────────────────────── */
 :root {
   --bg:        #fbfaf8;
@@ -13,7 +44,7 @@
   --radius:    12px;
   --wrap:      1040px;
   --gutter:    13rem;
-  --serif:     ui-serif, "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --serif:     Lora, "New York", Georgia, "Times New Roman", serif;
   --sans:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono:      ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
@@ -162,15 +193,16 @@ h1 .fn { color: var(--accent); }
 .pill:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
 .pill svg { width: .9rem; height: .9rem; fill: currentColor; flex: 0 0 auto; }
 
-.photo-card {
-  margin: 0; background: var(--bg-soft);
-  border: 1px solid var(--line); border-radius: var(--radius);
-  overflow: hidden; box-shadow: var(--shadow);
+.photo { position: relative; margin: 0 .85rem .85rem 0; }
+.photo::before {
+  content: ""; position: absolute; inset: .85rem -.85rem -.85rem .85rem;
+  border: 1px solid var(--accent); border-radius: 14px; opacity: .4;
 }
-.photo-card img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
-.photo-card figcaption {
-  padding: .5rem .7rem; border-top: 1px solid var(--line);
-  font-size: .76rem; color: var(--text-faint); background: var(--bg-sunken);
+.photo img {
+  position: relative; display: block; width: 100%; height: auto;
+  aspect-ratio: 1; object-fit: cover; object-position: 50% 35%;
+  border-radius: 14px; border: 1px solid var(--line);
+  background: var(--bg-sunken); box-shadow: var(--shadow);
 }
 
 /* ── Sections ───────────────────────────────────────────────────────── */
@@ -281,7 +313,7 @@ h1 .fn { color: var(--accent); }
 }
 @media (max-width: 720px) {
   .hero { grid-template-columns: minmax(0, 1fr); }
-  .photo-card { max-width: 13rem; }
+  .photo { max-width: 13rem; }
   .site-nav { display: none; }
   .controls { margin-left: auto; }
   .pub, .timeline li, .news li, .contact li { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
@@ -295,6 +327,7 @@ h1 .fn { color: var(--accent); }
 @media print {
   .site-header, .footer-cta, .pills, .skip-link { display: none; }
   body { background: #fff; color: #000; font-size: 11pt; }
-  .card, .photo-card { box-shadow: none; break-inside: avoid; }
+  .card, .photo img { box-shadow: none; break-inside: avoid; }
+  .photo::before { display: none; }
   .section { grid-template-columns: 10rem 1fr; }
 }

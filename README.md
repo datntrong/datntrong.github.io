@@ -12,6 +12,7 @@ index.html            the whole page (all content lives here)
 assets/css/style.css  design tokens, light + dark themes, layout
 assets/js/main.js     language switch, theme switch, active-nav highlight
 assets/img/           avatar.jpg (480px on purpose — see below), favicon.svg
+assets/fonts/         Lora woff2 subsets, self-hosted (see below)
 files/                downloadables — put cv.pdf here
 .nojekyll             serve files as-is, skip Jekyll
 robots.txt, sitemap.xml
@@ -57,6 +58,20 @@ supply:
 - [ ] Optional: confirm the Bachelor's grade. The diploma in the photo reads
       "Hạng: Xuất sắc", but it is not on the page — add it to the education entry if you
       want it shown
+
+## Fonts
+
+Headings are Lora, self-hosted from `assets/fonts/` (SIL Open Font License 1.1) —
+three woff2 subsets (latin, latin-ext, vietnamese) declared with `unicode-range`, so a
+page only downloads what it renders. Body text stays on the system sans stack.
+
+This is not cosmetic. The old heading stack ended at `"Iowan Old Style"`, which Chrome
+picks on macOS because it does not support `ui-serif`. That font's cmap has no
+ơ ư ớ ờ ở ỡ ợ ứ ừ ử ữ ự, so Chrome dropped the horn and rendered Vietnamese words
+*misspelled* — "Dự án" came out as "Dụ án", "Những" as "Nhũng". Lora's vietnamese subset
+covers U+01A0–U+01B0 and U+1EA0–U+1EF9, which is exactly the gap. Keep a font with
+Vietnamese coverage first in `--serif` if you ever change it; New York and Georgia are
+both safe local fallbacks, Iowan Old Style and Charter are not.
 
 ## Why the avatar is 480px
 
