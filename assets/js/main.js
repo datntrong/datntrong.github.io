@@ -1,30 +1,8 @@
-/* datntrong.github.io — language switch, theme switch, nav highlighting. */
+/* datntrong.github.io — theme switch, nav highlighting. */
 (function () {
   'use strict';
 
   var root = document.documentElement;
-
-  /* ── Language ─────────────────────────────────────────────────────── */
-  var TITLES = {
-    en: 'Dat Nguyen Trong',
-    vi: 'Nguyễn Trọng Đạt'
-  };
-
-  function setLang(lang) {
-    root.setAttribute('data-lang', lang);
-    root.setAttribute('lang', lang);
-    document.title = TITLES[lang];
-    try { localStorage.setItem('lang', lang); } catch (e) { /* private mode */ }
-  }
-
-  var langBtn = document.getElementById('lang-toggle');
-  if (langBtn) {
-    langBtn.addEventListener('click', function () {
-      setLang(root.getAttribute('data-lang') === 'vi' ? 'en' : 'vi');
-    });
-  }
-  // Keep the title in sync with the language the inline head script picked.
-  setLang(root.getAttribute('data-lang') === 'vi' ? 'vi' : 'en');
 
   /* ── Theme ────────────────────────────────────────────────────────── */
   function currentTheme() {

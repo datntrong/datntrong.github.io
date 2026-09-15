@@ -1,6 +1,6 @@
 # datntrong.github.io
 
-Personal academic homepage — plain static HTML/CSS/JS, no build step, bilingual (English / Tiếng Việt).
+Personal academic homepage — plain static HTML/CSS/JS, no build step, in English.
 
 Live at **https://datntrong.github.io** once the repo is pushed and Pages is enabled.
 
@@ -10,7 +10,7 @@ Live at **https://datntrong.github.io** once the repo is pushed and Pages is ena
 index.html            the whole page (all content lives here)
 404.html              not-found page
 assets/css/style.css  design tokens, light + dark themes, layout
-assets/js/main.js     language switch, theme switch, active-nav highlight
+assets/js/main.js     theme switch, active-nav highlight
 assets/img/           avatar.jpg (480px on purpose — see below),
                       datntrong.svg + .png — the tab icon, a cartoon drawn from the photo
 assets/fonts/         Lora woff2 subsets, self-hosted (see below)
@@ -19,28 +19,11 @@ files/                downloadables — put cv.pdf here
 robots.txt, sitemap.xml
 ```
 
-## How the bilingual switch works
-
-Both languages sit side by side in the HTML:
-
-```html
-<span data-l="en">Research interests</span>
-<span data-l="vi">Hướng nghiên cứu</span>
-```
-
-`index.html` sets `data-lang` on `<html>` before first paint, and CSS hides the other
-language. So it works with JavaScript disabled, and search engines see real text —
-not a client-side render. The button in the header flips it and remembers the choice
-in `localStorage`; `?lang=vi` also forces a language.
-
-**When adding content, always add both languages.** Proper nouns, paper titles and
-code identifiers stay untranslated — only wrap the prose.
-
 ## Still to fill in
 
 Content pulled from your GitHub repos, your LinkedIn profile, ORCID and
-Crossref/OpenAlex is already in place. Search the HTML for `TODO` — each one marks something only you can
-supply:
+Crossref/OpenAlex is already in place. Search the HTML for `TODO` — each one marks
+something only you can supply:
 
 - [ ] `files/cv.pdf` — add the PDF, or delete the CV pill in the hero
 - [ ] Publication venue for UnitTestLM — tagged `Preprint`; add paper/arXiv/BibTeX links
@@ -58,6 +41,11 @@ supply:
 Headings are Lora, self-hosted from `assets/fonts/` (SIL Open Font License 1.1) —
 three woff2 subsets (latin, latin-ext, vietnamese) declared with `unicode-range`, so a
 page only downloads what it renders. Body text stays on the system sans stack.
+
+The vietnamese subset is kept even though the site is English-only now: it costs visitors
+nothing (`unicode-range` means it is never fetched unless a matching character is on the
+page) and it is what stops the bug below from coming back the moment a Vietnamese word
+appears — your own name with diacritics, a university name, a paper title.
 
 This is not cosmetic. The old heading stack ended at `"Iowan Old Style"`, which Chrome
 picks on macOS because it does not support `ui-serif`. That font's cmap has no

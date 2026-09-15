@@ -76,10 +76,6 @@
   --shadow:    0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -14px rgba(0, 0, 0, .7);
 }
 
-/* ── Bilingual switching (CSS-only, works without JS) ──────────────── */
-html[data-lang="en"] [data-l="vi"],
-html[data-lang="vi"] [data-l="en"] { display: none !important; }
-
 /* ── Base ───────────────────────────────────────────────────────────── */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }

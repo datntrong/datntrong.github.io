@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,18 +23,12 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 <script>
-  // Applied before first paint so the page never flashes the wrong theme/language.
+  // Applied before first paint so the page never flashes the wrong theme.
   (function () {
-    var root = document.documentElement;
-    var q = new URLSearchParams(location.search).get('lang');
-    var lang = q || localStorage.getItem('lang');
-    if (lang !== 'vi' && lang !== 'en') {
-      lang = (navigator.language || 'en').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
-    }
-    root.setAttribute('data-lang', lang);
-    root.setAttribute('lang', lang);
     var theme = localStorage.getItem('theme');
-    if (theme === 'dark' || theme === 'light') root.setAttribute('data-theme', theme);
+    if (theme === 'dark' || theme === 'light') {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
   })();
 </script>
 
@@ -75,31 +69,24 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#main"><span data-l="en">Skip to content</span><span data-l="vi">Tới nội dung</span></a>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="#top">
-      <span data-l="en">Dat Nguyen Trong</span><span data-l="vi">Nguyễn Trọng Đạt</span>
-    </a>
+    <a class="brand" href="#top">Dat Nguyen Trong</a>
     <nav class="site-nav" aria-label="Sections">
-      <a href="#about"><span data-l="en">About</span><span data-l="vi">Giới thiệu</span></a>
-      <a href="#research"><span data-l="en">Research</span><span data-l="vi">Nghiên cứu</span></a>
-      <a href="#publications"><span data-l="en">Publications</span><span data-l="vi">Công bố</span></a>
-      <a href="#projects"><span data-l="en">Projects</span><span data-l="vi">Dự án</span></a>
-      <a href="#awards"><span data-l="en">Awards</span><span data-l="vi">Giải thưởng</span></a>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#awards">Awards</a>
     </nav>
     <div class="controls">
-      <button id="lang-toggle" type="button" class="icon-btn" aria-label="Switch language">
-        <span data-l="en">VI</span><span data-l="vi">EN</span>
-      </button>
       <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch theme">
         <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g stroke-linecap="round"><path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7"/></g></svg>
         <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
       </button>
-      <a class="cta" href="mailto:datntrong@gmail.com">
-        <span data-l="en">Get in touch</span><span data-l="vi">Liên hệ</span> <span aria-hidden="true">↗</span>
-      </a>
+      <a class="cta" href="mailto:datntrong@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </header>
@@ -109,22 +96,12 @@
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
   <section class="wrap hero">
     <div class="hero-text">
-      <p class="eyebrow">
-        <span data-l="en">Software testing researcher</span>
-        <span data-l="vi">Nghiên cứu kiểm thử phần mềm</span>
-      </p>
-      <h1>
-        <span data-l="en"><span class="fn">Dat</span> Nguyen Trong</span>
-        <span data-l="vi"><span class="fn">Nguyễn</span> Trọng Đạt</span>
-      </h1>
+      <p class="eyebrow">Software testing researcher</p>
+      <h1><span class="fn">Dat</span> Nguyen Trong</h1>
       <p class="role">
-        <span data-l="en">Research assistant, Software Quality Assurance Laboratory (RD320) · Faculty of Information Technology, VNU University of Engineering and Technology</span>
-        <span data-l="vi">Trợ lý nghiên cứu, Phòng thí nghiệm Đảm bảo chất lượng phần mềm (RD320) · Khoa Công nghệ Thông tin, Trường Đại học Công nghệ, ĐHQG Hà Nội</span>
+        Research assistant, Software Quality Assurance Laboratory (RD320) · Faculty of Information Technology, VNU University of Engineering and Technology
       </p>
-      <p class="tagline">
-        <span data-l="en">Making machines write tests we can actually <em>run</em>.</span>
-        <span data-l="vi">Để máy viết ra những test thực sự <em>chạy được</em>.</span>
-      </p>
+      <p class="tagline">Making machines write tests we can actually <em>run</em>.</p>
 
       <p class="pills">
         <a class="pill" href="https://github.com/datntrong" rel="me noopener">
@@ -142,7 +119,7 @@
         <!-- TODO: put your CV at files/cv.pdf, or delete this pill. -->
         <a class="pill" href="files/cv.pdf">
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9.3 1H4a1.5 1.5 0 0 0-1.5 1.5v11A1.5 1.5 0 0 0 4 15h8a1.5 1.5 0 0 0 1.5-1.5V5.2L9.3 1zm-.3 1.6 3.1 3.1H9V2.6zM4.8 8.4h6.4v1H4.8v-1zm0 2.5h6.4v1H4.8v-1z"/></svg>
-          <span data-l="en">CV</span><span data-l="vi">CV</span>
+          CV
         </a>
         <!-- TODO: add this once you have it.
         <a class="pill" href="https://scholar.google.com/citations?user=XXXX" rel="noopener">Google Scholar</a>
@@ -150,21 +127,18 @@
       </p>
     </div>
 
-    <div class="photo">
-      <img src="assets/img/avatar.jpg" width="480" height="480" alt="Dat Nguyen Trong" fetchpriority="high">
-    </div>
+    <div class="photo"><img src="assets/img/avatar.jpg" width="480" height="480" alt="Dat Nguyen Trong" fetchpriority="high"></div>
   </section>
 
   <!-- ─── I / About ────────────────────────────────────────────────── -->
   <section id="about" class="wrap section">
     <div class="section-head">
       <span class="numeral">I /</span>
-      <h2><span data-l="en">A little about me</span><span data-l="vi">Về tôi</span></h2>
+      <h2>A little about me</h2>
     </div>
     <div class="section-body">
       <p class="lede">
-        <span data-l="en">I work on <strong>automated software testing</strong> and on making large language models useful for it in practice: generating unit tests that actually compile, run and cover the code under test; concolic test-data generation for projects built on framework classes; analysing the impact of code changes; and building multi-agent systems for software engineering tasks. I am part of the Software Quality Assurance Laboratory (RD320) at VNU-UET, where I also did my Bachelor's and Master's degrees. Earlier I worked on speech processing — as an AI engineer at Viettel Telecom — and on medical image analysis.</span>
-        <span data-l="vi">Tôi nghiên cứu về <strong>kiểm thử phần mềm tự động</strong> và cách dùng các mô hình ngôn ngữ lớn cho việc đó một cách thực dụng: sinh unit test biên dịch được, chạy được và phủ được mã nguồn; sinh dữ liệu kiểm thử bằng concolic testing cho các dự án dùng lớp của framework; phân tích ảnh hưởng của thay đổi mã; và xây dựng hệ đa tác tử cho các bài toán công nghệ phần mềm. Tôi làm việc tại Phòng thí nghiệm Đảm bảo chất lượng phần mềm (RD320), Trường Đại học Công nghệ — cũng là nơi tôi học cử nhân và thạc sĩ. Trước đó tôi làm về xử lý tiếng nói — với vai trò AI engineer tại Viettel Telecom — và phân tích ảnh y tế.</span>
+        I work on <strong>automated software testing</strong> and on making large language models useful for it in practice: generating unit tests that actually compile, run and cover the code under test; concolic test-data generation for projects built on framework classes; analysing the impact of code changes; and building multi-agent systems for software engineering tasks. I am part of the Software Quality Assurance Laboratory (RD320) at VNU-UET, where I also did my Bachelor's and Master's degrees. Earlier I worked on speech processing — as an AI engineer at Viettel Telecom — and on medical image analysis.
       </p>
     </div>
   </section>
@@ -173,34 +147,29 @@
   <section id="news" class="wrap section">
     <div class="section-head">
       <span class="numeral">II /</span>
-      <h2><span data-l="en">Latest updates</span><span data-l="vi">Tin mới</span></h2>
+      <h2>Latest updates</h2>
     </div>
     <div class="section-body">
       <ul class="news">
         <li>
-          <time><span data-l="en">Aug 2026</span><span data-l="vi">8/2026</span></time>
-          <span data-l="en"><strong>ConAgent</strong> — agent-based concolic testing for Qt projects — is online in <em>Information and Software Technology</em>, in the December 2026 issue (vol. 200). <a href="https://doi.org/10.1016/j.infsof.2026.108301" rel="noopener">DOI</a>.</span>
-          <span data-l="vi"><strong>ConAgent</strong> — concolic testing dựa trên tác tử cho các dự án Qt — đã lên <em>Information and Software Technology</em>, thuộc số tháng 12/2026 (tập 200). <a href="https://doi.org/10.1016/j.infsof.2026.108301" rel="noopener">DOI</a>.</span>
+          <time>Aug 2026</time>
+          <strong>ConAgent</strong> — agent-based concolic testing for Qt projects — is online in <em>Information and Software Technology</em>, in the December 2026 issue (vol. 200). <a href="https://doi.org/10.1016/j.infsof.2026.108301" rel="noopener">DOI</a>.
         </li>
         <li>
-          <time><span data-l="en">Jul 2026</span><span data-l="vi">7/2026</span></time>
-          <span data-l="en"><strong>UnitTestLM</strong> is public — a distillation + GRPO pipeline that gets a small model to 84% statement coverage on Python and 73% on C++, while running faster than its 8×H200 teacher. <a href="https://github.com/datntrong/UnitTestLM" rel="noopener">Code</a>.</span>
-          <span data-l="vi"><strong>UnitTestLM</strong> đã công khai — pipeline distillation + GRPO giúp một mô hình nhỏ đạt 84% statement coverage với Python và 73% với C++, mà vẫn chạy nhanh hơn mô hình teacher 8×H200. <a href="https://github.com/datntrong/UnitTestLM" rel="noopener">Mã nguồn</a>.</span>
+          <time>Jul 2026</time>
+          <strong>UnitTestLM</strong> is public — a distillation + GRPO pipeline that gets a small model to 84% statement coverage on Python and 73% on C++, while running faster than its 8×H200 teacher. <a href="https://github.com/datntrong/UnitTestLM" rel="noopener">Code</a>.
         </li>
         <li>
-          <time><span data-l="en">Jun 2026</span><span data-l="vi">6/2026</span></time>
-          <span data-l="en">Finished the <strong>MSc in Software Engineering</strong> at VNU-UET with High Distinction.</span>
-          <span data-l="vi">Hoàn thành <strong>Thạc sĩ Công nghệ phần mềm</strong> tại Trường ĐH Công nghệ, loại Xuất sắc.</span>
+          <time>Jun 2026</time>
+          Finished the <strong>MSc in Software Engineering</strong> at VNU-UET with High Distinction.
         </li>
         <li>
-          <time><span data-l="en">Dec 2025</span><span data-l="vi">12/2025</span></time>
-          <span data-l="en"><strong>First Prize</strong> at the Viettel AI Race (Viettel Group).</span>
-          <span data-l="vi">Đạt <strong>Giải Nhất</strong> cuộc thi Viettel AI Race (Tập đoàn Viettel).</span>
+          <time>Dec 2025</time>
+          <strong>First Prize</strong> at the Viettel AI Race (Viettel Group).
         </li>
         <li>
-          <time><span data-l="en">Jul 2025</span><span data-l="vi">7/2025</span></time>
-          <span data-l="en">The accepted version of <strong>ConAgent</strong> went up on SSRN, open access. <a href="https://doi.org/10.2139/ssrn.5369273" rel="noopener">Preprint</a>.</span>
-          <span data-l="vi">Bản chấp nhận của <strong>ConAgent</strong> được đăng trên SSRN, truy cập mở. <a href="https://doi.org/10.2139/ssrn.5369273" rel="noopener">Bản thảo</a>.</span>
+          <time>Jul 2025</time>
+          The accepted version of <strong>ConAgent</strong> went up on SSRN, open access. <a href="https://doi.org/10.2139/ssrn.5369273" rel="noopener">Preprint</a>.
         </li>
       </ul>
     </div>
@@ -210,40 +179,36 @@
   <section id="research" class="wrap section">
     <div class="section-head">
       <span class="numeral">III /</span>
-      <h2><span data-l="en">Research interests</span><span data-l="vi">Hướng nghiên cứu</span></h2>
+      <h2>Research interests</h2>
     </div>
     <div class="section-body">
       <div class="cards">
         <article class="card">
           <span class="idx">01</span>
-          <h3><span data-l="en">Automated unit test generation</span><span data-l="vi">Sinh unit test tự động</span></h3>
+          <h3>Automated unit test generation</h3>
           <p>
-            <span data-l="en">Tests are only worth anything if they build, run and exercise the target. I work on pipelines that validate every candidate test end-to-end — <code>pytest</code> for Python, compile-link-execute with gcov/lcov for C++ — and use that signal to train compact models instead of paying for a frontier model per method.</span>
-            <span data-l="vi">Một test chỉ có giá trị khi nó biên dịch được, chạy được và thực sự gọi tới hàm đích. Tôi xây các pipeline kiểm chứng từng test sinh ra một cách đầu-cuối — <code>pytest</code> cho Python, compile-link-execute kèm gcov/lcov cho C++ — rồi dùng tín hiệu đó để huấn luyện mô hình nhỏ, thay vì gọi mô hình lớn cho từng hàm.</span>
+            Tests are only worth anything if they build, run and exercise the target. I work on pipelines that validate every candidate test end-to-end — <code>pytest</code> for Python, compile-link-execute with gcov/lcov for C++ — and use that signal to train compact models instead of paying for a frontier model per method.
           </p>
         </article>
         <article class="card">
           <span class="idx">02</span>
-          <h3><span data-l="en">Concolic test-data generation</span><span data-l="vi">Sinh dữ liệu kiểm thử concolic</span></h3>
+          <h3>Concolic test-data generation</h3>
           <p>
-            <span data-l="en">Symbolic execution stalls where a constraint solver alone cannot build the objects a test driver needs — parameters whose types come from a framework such as Qt. Recovering the right constructors, then letting agents drive the search, makes those units testable.</span>
-            <span data-l="vi">Thực thi ký hiệu bị tắc ở chỗ bộ giải ràng buộc một mình không tạo được các đối tượng mà test driver cần — những tham số có kiểu đến từ framework như Qt. Khôi phục đúng danh sách constructor, rồi để các tác tử dẫn dắt quá trình tìm kiếm, sẽ khiến các hàm đó kiểm thử được.</span>
+            Symbolic execution stalls where a constraint solver alone cannot build the objects a test driver needs — parameters whose types come from a framework such as Qt. Recovering the right constructors, then letting agents drive the search, makes those units testable.
           </p>
         </article>
         <article class="card">
           <span class="idx">03</span>
-          <h3><span data-l="en">LLM agents for software engineering</span><span data-l="vi">Tác tử LLM cho công nghệ phần mềm</span></h3>
+          <h3>LLM agents for software engineering</h3>
           <p>
-            <span data-l="en">Multi-agent workflows for repository-scale tasks: change impact analysis, test repair, mutation testing and regression selection — with execution feedback in the loop rather than one-shot prompting.</span>
-            <span data-l="vi">Quy trình đa tác tử cho các bài toán ở quy mô repository: phân tích ảnh hưởng thay đổi, sửa test, mutation testing và chọn lọc kiểm thử hồi quy — có phản hồi từ thực thi trong vòng lặp, không chỉ prompt một lượt.</span>
+            Multi-agent workflows for repository-scale tasks: change impact analysis, test repair, mutation testing and regression selection — with execution feedback in the loop rather than one-shot prompting.
           </p>
         </article>
         <article class="card">
           <span class="idx">04</span>
-          <h3><span data-l="en">Efficient model adaptation</span><span data-l="vi">Tinh chỉnh mô hình hiệu quả</span></h3>
+          <h3>Efficient model adaptation</h3>
           <p>
-            <span data-l="en">Knowledge distillation and reinforcement learning with rule-based, verifiable rewards (GRPO), so a model that fits on one GPU keeps most of a much larger teacher's capability at a fraction of the inference cost.</span>
-            <span data-l="vi">Knowledge distillation và học tăng cường với phần thưởng kiểm chứng được theo luật (GRPO), để một mô hình chạy vừa một GPU giữ được phần lớn năng lực của teacher lớn hơn nhiều, với chi phí suy luận nhỏ hơn hẳn.</span>
+            Knowledge distillation and reinforcement learning with rule-based, verifiable rewards (GRPO), so a model that fits on one GPU keeps most of a much larger teacher's capability at a fraction of the inference cost.
           </p>
         </article>
       </div>
@@ -254,13 +219,10 @@
   <section id="publications" class="wrap section">
     <div class="section-head">
       <span class="numeral">IV /</span>
-      <h2><span data-l="en">Publications</span><span data-l="vi">Công bố</span></h2>
+      <h2>Publications</h2>
     </div>
     <div class="section-body">
-      <p class="note">
-        <span data-l="en"><sup>*</sup> equal contribution · <sup>†</sup> corresponding author</span>
-        <span data-l="vi"><sup>*</sup> đóng góp ngang nhau · <sup>†</sup> tác giả liên hệ</span>
-      </p>
+      <p class="note"><sup>*</sup> equal contribution · <sup>†</sup> corresponding author</p>
 
       <ol class="pubs">
         <!-- TODO (optional): Crossref/SSRN carry no abstract for this one, so the summary
@@ -272,13 +234,12 @@
             <p class="pub-authors"><strong>Dat Nguyen Trong</strong>, Duc Nguyen Huu, Linh Ngoc Truc Tran, Duc-Anh Nguyen, Pham Ngoc Hung</p>
             <p class="pub-venue">Information and Software Technology, vol. 200, art. 108301, 2026</p>
             <p class="pub-abs">
-              <span data-l="en">An agent-based approach to concolic testing that generates test data for C++ projects built on the Qt framework — code that classic concolic tools struggle with, because they cannot instantiate framework classes in a test driver.</span>
-              <span data-l="vi">Một hướng tiếp cận dựa trên tác tử cho concolic testing, sinh dữ liệu kiểm thử cho các dự án C++ dùng framework Qt — loại mã mà các công cụ concolic truyền thống gặp khó, vì chúng không khởi tạo được đối tượng của lớp framework trong test driver.</span>
+              An agent-based approach to concolic testing that generates test data for C++ projects built on the Qt framework — code that classic concolic tools struggle with, because they cannot instantiate framework classes in a test driver.
             </p>
             <p class="pub-links">
               <a class="chip" href="https://doi.org/10.1016/j.infsof.2026.108301" rel="noopener">DOI</a>
-              <a class="chip" href="https://doi.org/10.2139/ssrn.5369273" rel="noopener"><span data-l="en">Accepted version</span><span data-l="vi">Bản chấp nhận</span></a>
-              <span class="badge"><span data-l="en">Open access</span><span data-l="vi">Truy cập mở</span></span>
+              <a class="chip" href="https://doi.org/10.2139/ssrn.5369273" rel="noopener">Accepted version</a>
+              <span class="badge">Open access</span>
             </p>
           </div>
         </li>
@@ -289,17 +250,13 @@
           <div class="pub-body">
             <h3>UnitTestLM for Efficient Unit Test Generation via Distillation and Reinforcement Learning</h3>
             <p class="pub-authors"><strong>Dat Nguyen Trong</strong><sup>*</sup>, Phuoc Truong Minh<sup>*</sup>, Chau Nguyen To Trinh, Trung Hau Tran, Duc Anh Nguyen<sup>†</sup>, Pham Ngoc Hung</p>
-            <p class="pub-venue">
-              <span data-l="en">Faculty of Information Technology, VNU University of Engineering and Technology</span>
-              <span data-l="vi">Khoa Công nghệ Thông tin, Trường Đại học Công nghệ, ĐHQG Hà Nội</span>
-            </p>
+            <p class="pub-venue">Faculty of Information Technology, VNU University of Engineering and Technology</p>
             <p class="pub-abs">
-              <span data-l="en">A two-stage pipeline — sequence-level distillation on execution-validated targets, then GRPO with rewards for format, build validity, successful execution and focal-method coverage — that lifts a compact student from 36% to 84% statement coverage on Python and from 26% to 73% on C++, at roughly 1/20 of the teacher's inference cost.</span>
-              <span data-l="vi">Pipeline hai giai đoạn — distillation ở mức chuỗi trên các nhãn đã kiểm chứng bằng thực thi, rồi GRPO với phần thưởng cho định dạng, tính biên dịch được, thực thi thành công và độ phủ hàm đích — đưa mô hình student nhỏ từ 36% lên 84% statement coverage với Python và từ 26% lên 73% với C++, với chi phí suy luận khoảng 1/20 so với teacher.</span>
+              A two-stage pipeline — sequence-level distillation on execution-validated targets, then GRPO with rewards for format, build validity, successful execution and focal-method coverage — that lifts a compact student from 36% to 84% statement coverage on Python and from 26% to 73% on C++, at roughly 1/20 of the teacher's inference cost.
             </p>
             <p class="pub-links">
-              <a class="chip" href="https://github.com/datntrong/UnitTestLM" rel="noopener"><span data-l="en">Code</span><span data-l="vi">Mã nguồn</span></a>
-              <span class="badge"><span data-l="en">Preprint</span><span data-l="vi">Bản thảo</span></span>
+              <a class="chip" href="https://github.com/datntrong/UnitTestLM" rel="noopener">Code</a>
+              <span class="badge">Preprint</span>
               <!-- TODO: add paper / arXiv / BibTeX chips here when available. -->
             </p>
           </div>
@@ -312,12 +269,9 @@
             <p class="pub-authors">Ngoc-Tu Nguyen, <strong>Trong-Dat Nguyen</strong>, Duy-Cat Can, Mai-Vu Tran, Ha Luu Manh, Hoang-Quynh Le</p>
             <p class="pub-venue">2021 13th International Conference on Knowledge and Systems Engineering (KSE), pp. 1–6</p>
             <p class="pub-abs">
-              <span data-l="en">Aspect classification for Vietnamese product reviews from Shopee: comments are represented with one-hot, fastText and PhoBERT embeddings, then classified with CNN and multilayer-perceptron models over two product domains.</span>
-              <span data-l="vi">Phân loại aspect cho bình luận sản phẩm tiếng Việt trên Shopee: biểu diễn bình luận bằng one-hot, fastText và PhoBERT, sau đó phân loại bằng CNN và mạng perceptron nhiều lớp trên hai miền sản phẩm.</span>
+              Aspect classification for Vietnamese product reviews from Shopee: comments are represented with one-hot, fastText and PhoBERT embeddings, then classified with CNN and multilayer-perceptron models over two product domains.
             </p>
-            <p class="pub-links">
-              <a class="chip" href="https://doi.org/10.1109/KSE53942.2021.9648690" rel="noopener">DOI</a>
-            </p>
+            <p class="pub-links"><a class="chip" href="https://doi.org/10.1109/KSE53942.2021.9648690" rel="noopener">DOI</a></p>
           </div>
         </li>
       </ol>
@@ -328,15 +282,14 @@
   <section id="projects" class="wrap section">
     <div class="section-head">
       <span class="numeral">V /</span>
-      <h2><span data-l="en">Selected projects</span><span data-l="vi">Dự án tiêu biểu</span></h2>
+      <h2>Selected projects</h2>
     </div>
     <div class="section-body">
       <div class="cards">
         <article class="card proj">
           <h3><a href="https://github.com/datntrong/UnitTestLM" rel="noopener">UnitTestLM</a></h3>
           <p>
-            <span data-l="en">Compact-model pipeline for Python and C++ unit test generation. Every generated test is validated by execution before it counts.</span>
-            <span data-l="vi">Pipeline mô hình nhỏ để sinh unit test cho Python và C++. Mọi test sinh ra đều phải qua kiểm chứng bằng thực thi.</span>
+            Compact-model pipeline for Python and C++ unit test generation. Every generated test is validated by execution before it counts.
           </p>
           <p class="tags"><span>Python</span><span>PyTorch</span><span>GRPO</span><span>gcov/lcov</span></p>
         </article>
@@ -345,17 +298,12 @@
         <article class="card proj">
           <h3><a href="https://github.com/datntrong/CIA-AUT" rel="noopener">CIA-AUT</a></h3>
           <p>
-            <span data-l="en">Change impact analysis for automated unit testing of Java projects — deciding what to re-test after a change instead of re-running everything.</span>
-            <span data-l="vi">Phân tích ảnh hưởng thay đổi cho kiểm thử đơn vị tự động với dự án Java — xác định cần kiểm thử lại phần nào sau mỗi thay đổi, thay vì chạy lại toàn bộ.</span>
+            Change impact analysis for automated unit testing of Java projects — deciding what to re-test after a change instead of re-running everything.
           </p>
           <p class="tags"><span>Java</span><span>Static analysis</span></p>
         </article>
       </div>
-      <p class="more">
-        <a href="https://github.com/datntrong?tab=repositories" rel="noopener">
-          <span data-l="en">All repositories on GitHub ↗</span><span data-l="vi">Toàn bộ repository trên GitHub ↗</span>
-        </a>
-      </p>
+      <p class="more"><a href="https://github.com/datntrong?tab=repositories" rel="noopener">All repositories on GitHub ↗</a></p>
     </div>
   </section>
 
@@ -363,34 +311,22 @@
   <section id="education" class="wrap section">
     <div class="section-head">
       <span class="numeral">VI /</span>
-      <h2><span data-l="en">Education</span><span data-l="vi">Học vấn</span></h2>
+      <h2>Education</h2>
     </div>
     <div class="section-body">
       <ul class="timeline">
         <li>
           <div class="when">2024 – 2026</div>
           <div class="what">
-            <h3>
-              <span data-l="en">MSc in Software Engineering</span>
-              <span data-l="vi">Thạc sĩ Công nghệ phần mềm</span>
-            </h3>
-            <p>
-              <span data-l="en">VNU University of Engineering and Technology, Hanoi · High Distinction</span>
-              <span data-l="vi">Trường Đại học Công nghệ, ĐHQG Hà Nội · loại Xuất sắc</span>
-            </p>
+            <h3>MSc in Software Engineering</h3>
+            <p>VNU University of Engineering and Technology, Hanoi · High Distinction</p>
           </div>
         </li>
         <li>
           <div class="when">2019 – 2023</div>
           <div class="what">
-            <h3>
-              <span data-l="en">BSc in Computer Science, Honours Program</span>
-              <span data-l="vi">Cử nhân Khoa học máy tính, chương trình chất lượng cao</span>
-            </h3>
-            <p>
-              <span data-l="en">VNU University of Engineering and Technology, Hanoi · High Distinction</span>
-              <span data-l="vi">Trường Đại học Công nghệ, ĐHQG Hà Nội · loại Xuất sắc</span>
-            </p>
+            <h3>BSc in Computer Science, Honours Program</h3>
+            <p>VNU University of Engineering and Technology, Hanoi · High Distinction</p>
           </div>
         </li>
       </ul>
@@ -401,48 +337,36 @@
   <section id="experience" class="wrap section">
     <div class="section-head">
       <span class="numeral">VII /</span>
-      <h2><span data-l="en">Experience</span><span data-l="vi">Kinh nghiệm</span></h2>
+      <h2>Experience</h2>
     </div>
     <div class="section-body">
       <ul class="timeline">
         <li>
-          <div class="when"><span data-l="en">2024 – now</span><span data-l="vi">2024 – nay</span></div>
+          <div class="when">2024 – now</div>
           <div class="what">
-            <h3><span data-l="en">Research assistant</span><span data-l="vi">Trợ lý nghiên cứu</span></h3>
-            <p>
-              <span data-l="en">Software Quality Assurance Laboratory (RD320), VNU-UET · full-time</span>
-              <span data-l="vi">Phòng thí nghiệm Đảm bảo chất lượng phần mềm (RD320), Trường ĐH Công nghệ · toàn thời gian</span>
-            </p>
+            <h3>Research assistant</h3>
+            <p>Software Quality Assurance Laboratory (RD320), VNU-UET · full-time</p>
           </div>
         </li>
         <li>
           <div class="when">2021 – 2024</div>
           <div class="what">
-            <h3><span data-l="en">Undergraduate research assistant</span><span data-l="vi">Trợ lý nghiên cứu (bậc đại học)</span></h3>
-            <p>
-              <span data-l="en">Software Quality Assurance Laboratory (RD320), VNU-UET</span>
-              <span data-l="vi">Phòng thí nghiệm Đảm bảo chất lượng phần mềm (RD320), Trường ĐH Công nghệ</span>
-            </p>
+            <h3>Undergraduate research assistant</h3>
+            <p>Software Quality Assurance Laboratory (RD320), VNU-UET</p>
           </div>
         </li>
         <li>
           <div class="when">2022 – 2023</div>
           <div class="what">
-            <h3><span data-l="en">Artificial intelligence engineer</span><span data-l="vi">Kỹ sư trí tuệ nhân tạo</span></h3>
-            <p>
-              <span data-l="en">Viettel Telecom · speech processing and deep learning</span>
-              <span data-l="vi">Viettel Telecom · xử lý tiếng nói và học sâu</span>
-            </p>
+            <h3>Artificial intelligence engineer</h3>
+            <p>Viettel Telecom · speech processing and deep learning</p>
           </div>
         </li>
         <li>
           <div class="when">2022</div>
           <div class="what">
             <h3>Viettel Digital Talent Program</h3>
-            <p>
-              <span data-l="en">Viettel Group · internship, data science and AI track</span>
-              <span data-l="vi">Tập đoàn Viettel · thực tập, hướng khoa học dữ liệu và AI</span>
-            </p>
+            <p>Viettel Group · internship, data science and AI track</p>
           </div>
         </li>
       </ul>
@@ -453,52 +377,49 @@
   <section id="awards" class="wrap section">
     <div class="section-head">
       <span class="numeral">VIII /</span>
-      <h2><span data-l="en">Awards &amp; scholarships</span><span data-l="vi">Giải thưởng &amp; học bổng</span></h2>
+      <h2>Awards &amp; scholarships</h2>
     </div>
     <div class="section-body">
       <ul class="timeline awards">
         <li>
           <div class="when">2025</div>
           <div class="what">
-            <h3><span data-l="en">First Prize, Viettel AI Race</span><span data-l="vi">Giải Nhất, Viettel AI Race</span></h3>
+            <h3>First Prize, Viettel AI Race</h3>
             <p>Viettel Group</p>
           </div>
         </li>
         <li>
           <div class="when">2024</div>
           <div class="what">
-            <h3><span data-l="en">VinIF Domestic Master's Scholarship</span><span data-l="vi">Học bổng Thạc sĩ trong nước VinIF</span></h3>
+            <h3>VinIF Domestic Master's Scholarship</h3>
             <p>Vingroup Innovation Foundation</p>
           </div>
         </li>
         <li>
           <div class="when">2023</div>
           <div class="what">
-            <h3><span data-l="en">Third Prize, Viettel Hearted AI Challenge (VHAC)</span><span data-l="vi">Giải Ba, Viettel Hearted AI Challenge (VHAC)</span></h3>
+            <h3>Third Prize, Viettel Hearted AI Challenge (VHAC)</h3>
             <p>Viettel Group</p>
           </div>
         </li>
         <li>
           <div class="when">2022, 2023</div>
           <div class="what">
-            <h3><span data-l="en">Yamada Scholarship</span><span data-l="vi">Học bổng Yamada</span></h3>
+            <h3>Yamada Scholarship</h3>
             <p>Yamada Scholarship Foundation</p>
           </div>
         </li>
         <li>
           <div class="when">2021</div>
           <div class="what">
-            <h3><span data-l="en">Second Prize, Scientific Research Conference for Undergraduates</span><span data-l="vi">Giải Nhì, Hội nghị Nghiên cứu khoa học sinh viên</span></h3>
-            <p>
-              <span data-l="en">Faculty of Information Technology, VNU-UET</span>
-              <span data-l="vi">Khoa Công nghệ Thông tin, Trường Đại học Công nghệ</span>
-            </p>
+            <h3>Second Prize, Scientific Research Conference for Undergraduates</h3>
+            <p>Faculty of Information Technology, VNU-UET</p>
           </div>
         </li>
         <li>
           <div class="when">2021</div>
           <div class="what">
-            <h3><span data-l="en">Scholarship for excellent students</span><span data-l="vi">Học bổng sinh viên xuất sắc</span></h3>
+            <h3>Scholarship for excellent students</h3>
             <p>VNU University of Engineering and Technology</p>
           </div>
         </li>
@@ -510,19 +431,16 @@
   <section id="contact" class="wrap section">
     <div class="section-head">
       <span class="numeral">IX /</span>
-      <h2><span data-l="en">Contact</span><span data-l="vi">Liên hệ</span></h2>
+      <h2>Contact</h2>
     </div>
     <div class="section-body">
-      <p class="lede">
-        <span data-l="en">Happy to talk about automated testing, LLM agents, or collaborations. The fastest way to reach me is email.</span>
-        <span data-l="vi">Rất vui được trao đổi về kiểm thử tự động, tác tử LLM hoặc các cơ hội hợp tác. Cách nhanh nhất là gửi email.</span>
-      </p>
+      <p class="lede">Happy to talk about automated testing, LLM agents, or collaborations. The fastest way to reach me is email.</p>
       <ul class="contact">
         <li><span class="k">Email</span><span class="v"><a href="mailto:datntrong@gmail.com">datntrong@gmail.com</a></span></li>
         <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/datntrong" rel="me noopener">github.com/datntrong</a></span></li>
         <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/datntrong/" rel="me noopener">linkedin.com/in/datntrong</a></span></li>
         <li><span class="k">ORCID</span><span class="v"><a href="https://orcid.org/0009-0002-4941-7635" rel="me noopener">0009-0002-4941-7635</a></span></li>
-        <li><span class="k" data-l="en">Location</span><span class="k" data-l="vi">Địa chỉ</span><span class="v"><span data-l="en">Hanoi, Vietnam</span><span data-l="vi">Hà Nội, Việt Nam</span></span></li>
+        <li><span class="k">Location</span><span class="v">Hanoi, Vietnam</span></li>
       </ul>
     </div>
   </section>
@@ -530,15 +448,10 @@
 
 <footer class="site-footer">
   <div class="wrap footer-cta">
-    <p class="cta-line">
-      <span data-l="en">Tests that <em>compile</em>, <em>run</em>, and mean something.</span>
-      <span data-l="vi">Những test <em>biên dịch được</em>, <em>chạy được</em>, và có ý nghĩa.</span>
-    </p>
+    <p class="cta-line">Tests that <em>compile</em>, <em>run</em>, and mean something.</p>
     <p class="cta-mail"><a href="mailto:datntrong@gmail.com">datntrong@gmail.com <span aria-hidden="true">↗</span></a></p>
   </div>
-  <div class="wrap footer-inner">
-    <p>© <span id="year">2026</span> Dat Nguyen Trong</p>
-  </div>
+  <div class="wrap footer-inner"><p>© <span id="year">2026</span> Dat Nguyen Trong</p></div>
 </footer>
 
 <script src="assets/js/main.js"></script>
